@@ -9,26 +9,30 @@ export const TaskProvider = ({ children }) => {
   //Load tasks from local storage
   useEffect(() => {
     const storedTasks = localStorage.getItem("tasks");
-    const storedDate = localStorage.getItem("selectedDate");
-
     if (storedTasks) {
       setTasks(JSON.parse(storedTasks));
     }
 
-    if (storedDate) {
-      setSelectedDate(new Date(storedDate));
-    }
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    setSelectedDate(today);
   }, []);
 
   //Save tasks to local storage
-  const saveToLocalStorage = (updateedTasks) => {
-    localStorage.setItem("tasks", JSON.stringify(updateedTasks));
-    localStorage.setItem("selectedDate", selectedDate.toISOString());
+  const saveToLocalStorage = (updatedTasks) => {
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+    localStorage.setItem(
+      "selectedDate",
+      selectedDate.toLocaleDateString("en-CA")
+    );
   };
 
   //Add task to date
-  const addTask = (date, task) => {
-    const dataKey = date.toISOString().split("T")[0];
+  const addTask = (date, taskText) => {
+    const taskId = Date.now();
+    const task = { id: taskId, text: taskText };
+
+    const dataKey = date.toLocaleDateString("en-CA");
     setTasks((prev) => {
       const updatedTasks = {
         ...prev,
@@ -40,14 +44,15 @@ export const TaskProvider = ({ children }) => {
   };
 
   //Delete task from date
-  const deleteTask = (date, taskIndex) => {
-    const dataKey = date.toISOString().split("T")[0];
+  const deleteTask = (date, taskId) => {
+    const dataKey = date.toLocaleDateString("en-CA");
+
     setTasks((prev) => {
       const updatedTasks = { ...prev };
 
       if (updatedTasks[dataKey]) {
         updatedTasks[dataKey] = updatedTasks[dataKey].filter(
-          (_, index) => index !== taskIndex
+          (task) => task.id !== taskId
         );
 
         if (updatedTasks[dataKey].length === 0) {

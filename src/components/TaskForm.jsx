@@ -2,12 +2,20 @@ import { useTaskContext } from "../context/TaskContext";
 import { useState } from "react";
 
 const TaskForm = () => {
-  const { selectedDate, addTask } = useTaskContext();
+  const { selectedDate, addTask, tasks } = useTaskContext();
   const [task, setTask] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const dataKey = selectedDate.toLocaleDateString("en-CA");
+    const tasksForDate = tasks?.[dataKey] || [];
+
+    if (tasksForDate.length >= 20) {
+      setError("You can only add up to 20 tasks per day.");
+      return;
+    }
 
     if (!task) {
       setError("Task cannot be empty.");
@@ -15,7 +23,7 @@ const TaskForm = () => {
       return;
     }
 
-    addTask(selectedDate, task);
+    addTask(selectedDate, task.trim());
     setTask("");
     setError("");
   };

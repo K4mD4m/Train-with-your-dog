@@ -12,7 +12,6 @@ const CalendarView = () => {
         value={selectedDate}
         className="bg-white shadow-md rounded-md p-4"
       />
-      <p className="mt-4">Selected date: {selectedDate.toDateString()}</p>
     </div>
   );
 };
