@@ -1,4 +1,5 @@
 import { createContext, useState, useContext, useEffect } from "react";
+import PropTypes from "prop-types";
 
 const TaskContext = createContext();
 
@@ -72,6 +73,10 @@ export const TaskProvider = ({ children }) => {
       {children}
     </TaskContext.Provider>
   );
+};
+
+TaskProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export const useTaskContext = () => useContext(TaskContext);

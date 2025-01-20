@@ -11,7 +11,7 @@ const TaskList = () => {
 
   return (
     <div className="mt-4">
-      <h2 className="text-xl font-bold mb-4 text-center text-blue-600">
+      <h2 className="text-xl font-bold mb-4 text-center text-blue-800">
         Tasks for {selectedDate.toDateString()}
       </h2>
       {tasksForDate.length > 0 ? (
@@ -22,7 +22,7 @@ const TaskList = () => {
             return (
               <li
                 key={taskId}
-                className="flex justify-between items-center p-2 border-b border-gray-200 hover:bg-gray-100 rounded-md"
+                className="flex justify-between items-center p-2 border-b border-gray-200 hover:bg-gray-100 rounded-md bg-gray-100"
               >
                 {task.text}{" "}
                 <button

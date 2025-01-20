@@ -6,14 +6,14 @@ const CalendarView = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4 text-center text-blue-600">
+      <h2 className="text-2xl font-bold mb-4 text-center text-blue-800">
         Select a date:
       </h2>
       <Calendar
         onChange={setSelectedDate}
         value={selectedDate}
-        className="bg-white shadow-md rounded-md p-4 border border-gray-200"
-        tileClassName="hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-300"
+        className="bg-gray-100 shadow-md rounded-md p-4 border border-gray-200"
+        tileClassName="hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
       />
     </div>
   );

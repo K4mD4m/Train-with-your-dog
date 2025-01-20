@@ -68,7 +68,7 @@ const exercises = [
 const Examples = () => {
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold text-center mb-8">
+      <h1 className="text-3xl font-bold text-center mb-8 text-blue-800">
         Dog Training Inspiration
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -83,7 +83,9 @@ const Examples = () => {
               className="w-full h-48 object-cover rounded-t-xl group-hover:scale-105 transition duration-300 ease-in-out"
             />
             <div className="p-4 text-center">
-              <h2 className="text-xl font-semibold mb-2">{exercise.title}</h2>
+              <h2 className="text-xl font-semibold mb-2 text-blue-800">
+                {exercise.title}
+              </h2>
               <p className="text-gray-600">{exercise.description}</p>
             </div>
           </div>

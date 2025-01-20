@@ -5,6 +5,7 @@ import Examples from "./pages/Examples";
 import Header from "./components/Header";
 import { TaskProvider } from "./context/TaskContext";
 import Inspiration from "./pages/Inspiration";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
+        <Footer />
       </Router>
     </TaskProvider>
   );

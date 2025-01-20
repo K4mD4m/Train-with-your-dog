@@ -31,19 +31,19 @@ const TaskForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      <h2 className="text-xl font-bold text-center text-blue-600">
+      <h2 className="text-xl font-bold text-center text-blue-800">
         Add a task for {selectedDate.toDateString()}
       </h2>
       <input
         type="text"
         value={task}
         onChange={(e) => setTask(e.target.value)}
-        className="border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-300"
+        className="border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-300 bg-gray-100"
         placeholder="Enter a task"
       />
       <button
         type="submit"
-        className="bg-blue-500 text-white font-semibold px-4 py-2 rounded-md hover:bg-blue-600"
+        className="bg-blue-800 text-white font-semibold px-4 py-2 rounded-md hover:bg-blue-700"
       >
         Add Task
       </button>

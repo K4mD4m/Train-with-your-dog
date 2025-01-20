@@ -1,7 +1,7 @@
 const Inspiration = () => {
   return (
     <div className="min-h-screen py-12 px-6 sm:px-12">
-      <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+      <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg bg-gray-100">
         <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
           Dog Training Inspiration
         </h1>
@@ -14,7 +14,7 @@ const Inspiration = () => {
               <a
                 href="https://spiritdogtraining.com/"
                 target="_blank"
-                className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                className="text-blue-600 hover:text-blue-800 transition-colors"
               >
                 Spirit dog training
               </a>
@@ -23,7 +23,7 @@ const Inspiration = () => {
               <a
                 href="https://theonlinedogtrainer.com/"
                 target="_blank"
-                className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                className="text-blue-600 hover:text-blue-800 transition-colors"
               >
                 The online dog trainer
               </a>
@@ -32,7 +32,7 @@ const Inspiration = () => {
               <a
                 href="https://www.training-dogs.com/"
                 target="_blank"
-                className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                className="text-blue-600 hover:text-blue-800 transition-colors"
               >
                 Training dogs
               </a>
@@ -41,7 +41,7 @@ const Inspiration = () => {
               <a
                 href="https://www.diyk9.com/"
                 target="_blank"
-                className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                className="text-blue-600 hover:text-blue-800 transition-colors"
               >
                 DIYK9
               </a>
